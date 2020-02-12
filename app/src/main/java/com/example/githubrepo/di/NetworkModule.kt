@@ -3,6 +3,8 @@ package com.example.githubrepo.di
 import com.example.githubrepo.data.remote.TrendingRepoService
 import dagger.Module
 import dagger.Provides
+import kotlinx.coroutines.CoroutineDispatcher
+import kotlinx.coroutines.Dispatchers
 import okhttp3.OkHttpClient
 import okhttp3.logging.HttpLoggingInterceptor
 import retrofit2.Retrofit
@@ -37,5 +39,8 @@ class NetworkModule {
             .build()
             .create(TrendingRepoService::class.java)
     }
+
+    @Provides
+    fun provideDispatcher(): CoroutineDispatcher = Dispatchers.IO
 
 }
