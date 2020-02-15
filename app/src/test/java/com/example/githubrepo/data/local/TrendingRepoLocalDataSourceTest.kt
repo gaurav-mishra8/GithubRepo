@@ -50,6 +50,7 @@ class TrendingRepoLocalDataSourceTest {
         assertEquals(false, isCacheValid)
     }
 
+
     private fun getTwoHourAgoTime(): Long {
         val now = Calendar.getInstance()
         now.add(Calendar.HOUR, -2)

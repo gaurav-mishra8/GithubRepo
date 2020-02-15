@@ -4,13 +4,14 @@ import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
+import com.example.githubrepo.data.ITrendingRepoDataSource
 import com.example.githubrepo.data.TrendingRepoDataSource
 import com.example.githubrepo.ui.model.ViewTrendingRepoModel
 import kotlinx.coroutines.launch
 import javax.inject.Inject
 
 class TrendingRepoViewModel @Inject constructor(
-    private val dataSource: TrendingRepoDataSource
+    private val dataSource: ITrendingRepoDataSource
 ) : ViewModel() {
 
     private val uiStateLiveData = MutableLiveData<ViewState>()
@@ -50,6 +51,6 @@ class TrendingRepoViewModel @Inject constructor(
 data class ViewState(
     val isLoading: Boolean = false,
     val data: List<ViewTrendingRepoModel>? = null,
-    val error: String? = "",
+    val error: String? = null,
     val isRefreshing: Boolean = false
 )
