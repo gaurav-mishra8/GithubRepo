@@ -21,7 +21,7 @@ class TrendingRepoLocalDataSourceTest {
     }
 
     @Test
-    fun `cache is valid true for one hour ago`() {
+    fun `cache is valid one hour ago`() {
 
         `when`(prefs.getLong(anyString(), anyLong())).thenReturn(getOneHourAgoTime())
 
@@ -31,7 +31,7 @@ class TrendingRepoLocalDataSourceTest {
     }
 
     @Test
-    fun `cache is valid false for two hour ago`() {
+    fun `cache is invalid two hour ago`() {
 
         `when`(prefs.getLong(anyString(), anyLong())).thenReturn(getTwoHourAgoTime())
 
@@ -41,7 +41,7 @@ class TrendingRepoLocalDataSourceTest {
     }
 
     @Test
-    fun `cache is valid false for three hour ago`() {
+    fun `cache is valid three hour ago`() {
 
         `when`(prefs.getLong(anyString(), anyLong())).thenReturn(getThreeHourAgoTime())
 

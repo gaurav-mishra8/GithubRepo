@@ -35,7 +35,11 @@ class TrendingRepoViewModel @Inject constructor(
             } catch (e: Exception) {
 
                 uiStateLiveData.value =
-                    getCurrentViewState().copy(isLoading = false, data = null, error = e.message)
+                    getCurrentViewState().copy(
+                        isLoading = false,
+                        data = null,
+                        error = e.localizedMessage
+                    )
 
             }
         }

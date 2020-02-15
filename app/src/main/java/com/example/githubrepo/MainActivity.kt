@@ -22,12 +22,11 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
-        val viewModel =
-            ViewModelProvider(this, viewModelFactory).get(TrendingRepoViewModel::class.java)
-
-        viewModel.getTrendingRepoList().observe(this, Observer {
-            bindViewState(it)
-        })
+        val viewModel = getViewModelByFactory<TrendingRepoViewModel>(factory = viewModelFactory) {
+                getTrendingRepoList().observe(this@MainActivity, Observer {
+                    bindViewState(it)
+                })
+            }
 
         viewModel.fetchTrendingRepos()
     }
