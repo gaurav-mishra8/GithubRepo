@@ -1,8 +1,8 @@
 package com.example.githubrepo.di
 
 import android.app.Application
-import android.content.Context
 import com.example.githubrepo.MainActivity
+import com.example.githubrepo.TrendingRepoFragment
 import dagger.BindsInstance
 import dagger.Component
 import javax.inject.Singleton
@@ -17,4 +17,6 @@ interface AppComponent {
     }
 
     fun inject(activity: MainActivity)
+
+    fun inject(fragment: TrendingRepoFragment)
 }

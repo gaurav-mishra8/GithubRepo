@@ -5,7 +5,6 @@ import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import com.example.githubrepo.data.ITrendingRepoDataSource
-import com.example.githubrepo.data.TrendingRepoDataSource
 import com.example.githubrepo.ui.model.ViewTrendingRepoModel
 import kotlinx.coroutines.launch
 import javax.inject.Inject
